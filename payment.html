@@ -9,7 +9,7 @@
 
 <body>
     <br><br>
-   <h2 style="text-align: center">Amount to pay: <span id="amt"></span> USD</h2>
+    <h2 style="text-align: center">Amount to pay: <span id="amt"></span> <span id="currency"></span></h2>
     <br><br>
     
     <!-- Include the PayPal JavaScript SDK -->
@@ -32,9 +32,9 @@
         var x=getQueryVariable("amount");
         document.getElementById("amt").innerHTML = x;
 
-
         var a= getQueryVariable("currency");
         var y= 'https://www.paypal.com/sdk/js?currency=' + a +'&client-id=<INSERTE-CLIENT-ID>';
+        document.getElementById("currency").innerHTML = a;
         
         var script = document.createElement( 'script' );
         script.src = y;
